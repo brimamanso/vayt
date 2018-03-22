@@ -13,7 +13,6 @@
     <%= fa_icon 'shield' %>
     <%= pluralize(@user.posts_count, 'post') %>
   </h5>
-  
   <% if @user.location.present? %>
     <h5>
       <%= fa_icon 'map-marker' %>
