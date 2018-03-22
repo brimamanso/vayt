@@ -1,0 +1,2 @@
+class cien < ApplicationRecord
+end
