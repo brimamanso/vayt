@@ -1,2 +1,0 @@
-class cien < ApplicationRecord
-end
