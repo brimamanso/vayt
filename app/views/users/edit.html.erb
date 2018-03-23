@@ -111,11 +111,7 @@
           <h5><%= f.label :Experiences %></h5>
           <%= f.text_area :Experiences, placeholder: 'Experiences', class: 'form-control' %>
         </div>
-        
-        <div class="form-group">
-          <h5><%= f.label :date_of_birth %></h5>
-          <%= f.text_field :date_of_birth, placeholder: 'year/month/day', class: 'form-control' %>
-        </div>
+
         <div class="form-group">
           <h5><%= f.label :sex %><br></h5>
           <%= f.select :sex, options_for_seasons, class: 'form-control', prompt: 'Select One' %>
