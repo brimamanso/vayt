@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-
+ruby '2.3.3'
 git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
   "https://github.com/#{repo_name}.git"
@@ -34,7 +34,7 @@ gem 'acts_as_votable', '~> 0.11.1'
 gem 'acts_as_follower'
 gem 'private_pub'
 gem 'thin'
-gem 'fog'
+#gem 'fog'
 gem 'counter_culture', '~> 1.9'
 gem 'haml', '~> 5.0', '>= 5.0.4'
 gem 'pg_search', '~> 2.1', '>= 2.1.2'
@@ -51,9 +51,10 @@ gem 'paperclip', '~> 5.2', '>= 5.2.1'
 gem 'thor', '~> 0.20.0'
 gem 'acts-as-taggable-on', '~> 5.0'
 gem 'carrierwave_direct'
+gem 'puma', '~> 3.11', '>= 3.11.3'
 gem 'sidekiq'
 gem 'jquery-fileupload-rails', '~> 0.4.7'
-gem 'fog-aws'
+#gem 'fog-aws'
 
 
 # Use CoffeeScript for .coffee assets and views

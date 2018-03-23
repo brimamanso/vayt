@@ -903,6 +903,7 @@ GEM
       i18n (>= 0.5.0)
       railties (>= 3.0.0)
     public_suffix (3.0.1)
+    puma (3.11.3)
     rack (2.0.3)
     rack-mini-profiler (0.10.7)
       rack (>= 1.2.0)
@@ -1058,8 +1059,6 @@ DEPENDENCIES
   counter_culture (~> 1.9)
   devise
   faker
-  fog
-  fog-aws
   font-awesome-rails
   friendly_id (~> 5.2, >= 5.2.3)
   haml (~> 5.0, >= 5.0.4)
@@ -1074,6 +1073,7 @@ DEPENDENCIES
   populator
   private_pub
   public_activity
+  puma (~> 3.11, >= 3.11.3)
   rack-mini-profiler
   rails (~> 5.1.4)
   rails_12factor
