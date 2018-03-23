@@ -30,7 +30,6 @@ class FaqsController < ApplicationController
     respond_to do |format|
       if @faq.save
         format.html { redirect_to @faq, notice: 'Question was successfully created.' }
-        format.json { render :show, status: :created, location: @faq }
       else
         format.html { render :new }
         format.json { render json: @faq.errors, status: :unprocessable_entity }
@@ -44,7 +43,6 @@ class FaqsController < ApplicationController
     respond_to do |format|
       if @faq.update(faq_params)
         format.html { redirect_to @faq, notice: 'Question was successfully updated.' }
-        format.json { render :show, status: :ok, location: @faq }
       else
         format.html { render :edit }
         format.json { render json: @faq.errors, status: :unprocessable_entity }
