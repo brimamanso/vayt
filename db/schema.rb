@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180323114624) do
+ActiveRecord::Schema.define(version: 20180323115324) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -264,6 +264,63 @@ ActiveRecord::Schema.define(version: 20180323114624) do
     t.integer "level", default: 0
     t.date "date_of_birth"
     t.string "location"
+    t.text "bio"
+    t.text "Favourite_Destinations"
+    t.text "wish"
+    t.text "believes"
+    t.text "Friends_with_benefits"
+    t.text "passions"
+    t.text "Favourite_Quote"
+    t.text "why_are_you_on_earth"
+    t.text "Core_Values"
+    t.text "strengths"
+    t.text "Leadership_Styles"
+    t.text "Native_Language"
+    t.text "Business_Ventures"
+    t.text "Allergies"
+    t.text "Favourite_Time_of_sleep"
+    t.text "Favourite_Books"
+    t.text "Favourite_Movies"
+    t.text "school_type"
+    t.text "Relationship_status"
+    t.text "Favourite_Footwears"
+    t.text "Favourite_Brand"
+    t.text "Favourite_Pet"
+    t.text "Favourite_Seasons"
+    t.text "Favourite_Animals"
+    t.text "Favourite_University"
+    t.text "Favourite_Schools"
+    t.text "Favourite_Youtubers"
+    t.text "Favourite_Songs"
+    t.text "Favourite_Car"
+    t.text "Favourite_Countries"
+    t.text "Favourite_Basketball_Players"
+    t.text "Favourite_Food"
+    t.text "Best_Friends"
+    t.text "Favourite_Roommate"
+    t.text "Favourite_Professors"
+    t.text "Favourite_Teachers"
+    t.text "Favourite_Subjects"
+    t.text "Favourite_Footballers"
+    t.text "Favourite_TVshows"
+    t.text "Favourite_Sports"
+    t.text "Role_Model"
+    t.text "Voluntering_Work"
+    t.text "Experiences"
+    t.text "Profession"
+    t.text "School_Name"
+    t.text "Accomplishments"
+    t.text "Skills"
+    t.text "Goals"
+    t.string "Website"
+    t.text "Likes"
+    t.text "Interests"
+    t.text "Hobies"
+    t.text "phone_number"
+    t.text "dob"
+    t.text "Majors"
+    t.text "Minors"
+    t.string "sex", default: "male", null: false
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
