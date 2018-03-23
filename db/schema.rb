@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180319230222) do
+ActiveRecord::Schema.define(version: 20180323114624) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,6 +34,21 @@ ActiveRecord::Schema.define(version: 20180319230222) do
     t.index ["trackable_type", "trackable_id"], name: "index_activities_on_trackable_type_and_trackable_id"
   end
 
+  create_table "cans", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "chats", force: :cascade do |t|
+    t.integer "sender_id"
+    t.integer "recipient_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["recipient_id"], name: "index_chats_on_recipient_id"
+    t.index ["sender_id"], name: "index_chats_on_sender_id"
+  end
+
   create_table "comments", force: :cascade do |t|
     t.text "content"
     t.bigint "post_id"
@@ -43,6 +58,25 @@ ActiveRecord::Schema.define(version: 20180319230222) do
     t.text "comment_html"
     t.index ["post_id"], name: "index_comments_on_post_id"
     t.index ["user_id"], name: "index_comments_on_user_id"
+  end
+
+  create_table "conversations", force: :cascade do |t|
+    t.integer "author_id"
+    t.integer "receiver_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["author_id", "receiver_id"], name: "index_conversations_on_author_id_and_receiver_id", unique: true
+    t.index ["author_id"], name: "index_conversations_on_author_id"
+    t.index ["receiver_id"], name: "index_conversations_on_receiver_id"
+  end
+
+  create_table "events", force: :cascade do |t|
+    t.string "name"
+    t.datetime "event_datetime"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_events_on_user_id"
   end
 
   create_table "faqs", force: :cascade do |t|
@@ -75,6 +109,22 @@ ActiveRecord::Schema.define(version: 20180319230222) do
     t.index ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type"
     t.index ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id"
     t.index ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type"
+  end
+
+  create_table "hash_tags", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "messages", force: :cascade do |t|
+    t.text "body"
+    t.bigint "chat_id"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["chat_id"], name: "index_messages_on_chat_id"
+    t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
   create_table "mls", force: :cascade do |t|
@@ -120,6 +170,67 @@ ActiveRecord::Schema.define(version: 20180319230222) do
     t.index ["user_id"], name: "index_posts_on_user_id"
   end
 
+  create_table "posts_cans", id: false, force: :cascade do |t|
+    t.bigint "post_id"
+    t.bigint "can_id"
+    t.index ["can_id"], name: "index_posts_cans_on_can_id"
+    t.index ["post_id"], name: "index_posts_cans_on_post_id"
+  end
+
+  create_table "posts_hash_tags", id: false, force: :cascade do |t|
+    t.bigint "post_id"
+    t.bigint "hash_tag_id"
+    t.index ["hash_tag_id"], name: "index_posts_hash_tags_on_hash_tag_id"
+    t.index ["post_id"], name: "index_posts_hash_tags_on_post_id"
+  end
+
+  create_table "replies", force: :cascade do |t|
+    t.text "content"
+    t.bigint "faq_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["faq_id"], name: "index_replies_on_faq_id"
+  end
+
+  create_table "search_suggestions", force: :cascade do |t|
+    t.string "term"
+    t.integer "popularity"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "taggings", id: :serial, force: :cascade do |t|
+    t.integer "tag_id"
+    t.string "taggable_type"
+    t.integer "taggable_id"
+    t.string "tagger_type"
+    t.integer "tagger_id"
+    t.string "context", limit: 128
+    t.datetime "created_at"
+    t.index ["context"], name: "index_taggings_on_context"
+    t.index ["tag_id", "taggable_id", "taggable_type", "context", "tagger_id", "tagger_type"], name: "taggings_idx", unique: true
+    t.index ["tag_id"], name: "index_taggings_on_tag_id"
+    t.index ["taggable_id", "taggable_type", "context"], name: "index_taggings_on_taggable_id_and_taggable_type_and_context"
+    t.index ["taggable_id", "taggable_type", "tagger_id", "context"], name: "taggings_idy"
+    t.index ["taggable_id"], name: "index_taggings_on_taggable_id"
+    t.index ["taggable_type"], name: "index_taggings_on_taggable_type"
+    t.index ["tagger_id", "tagger_type"], name: "index_taggings_on_tagger_id_and_tagger_type"
+    t.index ["tagger_id"], name: "index_taggings_on_tagger_id"
+  end
+
+  create_table "tags", id: :serial, force: :cascade do |t|
+    t.string "name"
+    t.integer "taggings_count", default: 0
+    t.index ["name"], name: "index_tags_on_name", unique: true
+  end
+
+  create_table "talks", force: :cascade do |t|
+    t.integer "sender_id"
+    t.integer "recipient_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "tlks", force: :cascade do |t|
     t.integer "sender_id"
     t.integer "recipient_id"
@@ -151,6 +262,8 @@ ActiveRecord::Schema.define(version: 20180319230222) do
     t.string "slug"
     t.integer "sash_id"
     t.integer "level", default: 0
+    t.date "date_of_birth"
+    t.string "location"
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
@@ -173,8 +286,15 @@ ActiveRecord::Schema.define(version: 20180319230222) do
 
   add_foreign_key "comments", "posts"
   add_foreign_key "comments", "users"
+  add_foreign_key "messages", "chats"
+  add_foreign_key "messages", "users"
   add_foreign_key "notifications", "follows"
   add_foreign_key "notifications", "posts"
   add_foreign_key "notifications", "users"
   add_foreign_key "notifications", "users", column: "notified_by_id"
+  add_foreign_key "posts_cans", "cans"
+  add_foreign_key "posts_cans", "posts"
+  add_foreign_key "posts_hash_tags", "hash_tags"
+  add_foreign_key "posts_hash_tags", "posts"
+  add_foreign_key "replies", "faqs"
 end

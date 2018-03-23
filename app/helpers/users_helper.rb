@@ -14,6 +14,16 @@ module UsersHelper
     def options_for_girls
       [['University', 'University'], ['College', 'College'], ['High School', 'High School'], ['Other', 'Other']]
     end
+    
+    def age(date_of_birth)
+      now = Time.now.utc.to_date
+      now.year - date_of_birth.year - (date_of_birth.to_date.change(:year => now.year) > now ? 1 : 0)
+    end
+
+    def date_of_birth
+      now = Time.now.utc.to_date
+      now.year - date_of_birth.year - (date_of_birth.to_date.change(:year => now.year) > now ? 1 : 0)
+    end
   
     def is_current_user?(user)
       user == current_user
