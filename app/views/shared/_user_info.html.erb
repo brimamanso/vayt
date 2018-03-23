@@ -14,12 +14,6 @@
     <%= pluralize(@user.posts_count, 'post') %>
   </h5>
 
-  <% if @user.location.present? %>
-    <h5>
-      <%= fa_icon 'map-marker' %>
-      <%= @user.location %>
-    </h5>
-  <% end %>
   <% if @user.bio.present? %>
     <h5>
       <p style="color: purple;font-weight: bold;">
