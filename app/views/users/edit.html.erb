@@ -1,0 +1,47 @@
+<style>
+        body {
+            background: linear-gradient( 
+                rgba(0,0,0, 0.5),
+                rgba(0,0,0, 0.5)
+                ), url("/star.jpg") no-repeat center center fixed           
+        }
+
+        h4 {
+            color: purple;
+            font-weight: bold;
+        }
+        h5 {
+            color: purple;
+            font-weight: bold;
+        }
+</style>
+<div class="row">
+    <div class=" well">
+      <center><h4 style="color:purple;font-weight: bold;">
+          Edit My Personal Profile</h4></center>
+    </div>
+  <div class="col-lg-6 col-lg-offset-0 well">
+      
+      <%= form_for @user do |f| %>
+        <div class="form-group">
+          <h4 style="color:purple;font-weight: bold;"><%= f.label :Add_a_Profile_Picture %></h4>
+        
+          <%= render 'shared/avatar' , user: @user %>
+          <br>
+          <br>
+          <%= f.file_field :avatar, class: 'form-control input-mentionable'%>
+            <% if @user.avatar? %>
+                  <br>
+                    
+                    <p style="color:red;font-weight: bold;"> <%= f.check_box :remove_avatar %> Remove Profile Picture </p>
+            <% end %>
+          
+        </div>
+  </div>
+        
+        <div class="actions">
+          <%= submit_tag 'Update', class: 'btn btn-info' %>
+        </div>
+      <% end %>
+    </div>
+</div>
