@@ -1077,7 +1077,7 @@ DEPENDENCIES
   rack-mini-profiler
   rails (~> 5.1.4)
   rails_12factor
-  sanitize
+  sanitize (~> 4.0, >= 4.0.1)
   sass-rails (~> 5.0)
   selenium-webdriver
   semantic-ui-sass (~> 2.3)
