@@ -47,7 +47,7 @@ class UsersController < ApplicationController
   
     def user_params
       params.require(:user).permit(:name, :about, :avatar, :cover, :avater,
-                                   :sex, :date_of_birth, :location, :phone_number, :Hobies, :Interests,
+                                   :sex, :location, :phone_number, :Hobies, :Interests,
                                    :Likes, :Website, :Goals, :Skills, :Nationality, :Accomplishments, 
                                    :school, :School_Name, :Courses, :Profession, :Experiences, :Voluntering_Work, 
                                    :Role_Model, :Favourite_Musicians, :Favourite_Sports, :Favourite_TVshows, :Favourite_Footballers, 
