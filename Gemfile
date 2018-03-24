@@ -54,6 +54,7 @@ gem 'carrierwave_direct'
 gem 'puma', '~> 3.11', '>= 3.11.3'
 gem 'sidekiq'
 gem 'jquery-fileupload-rails', '~> 0.4.7'
+gem 'mail_form', '~> 1.7'
 gem 'fog-aws', '~> 2.0', '>= 2.0.1'
 
 
