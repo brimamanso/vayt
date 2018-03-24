@@ -1,7 +1,7 @@
-class User < MailForm::Base
+class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
-  devise :database_authenticatable, :registerable,
+  devise :database_authenticatable, :registerable, :confirmable,
     :recoverable, :rememberable, :trackable, :validatable
   acts_as_voter
   acts_as_follower
@@ -33,13 +33,7 @@ class User < MailForm::Base
 
   extend FriendlyId
   friendly_id :name, use: [:slugged, :finders]
-  def headers
-    {
-    :subject => 'Contact Form',
-    :to => '@email.user',
-    :from => %(“#{name}” <#{email}>)
-    }
-    end
+
 
     
 end
