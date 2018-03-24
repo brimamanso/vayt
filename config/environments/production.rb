@@ -76,16 +76,13 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+  # Raises error for missing translations
+  # config.action_view.raise_on_missing_translations = true
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.default_url_options = { :host => 'https://vayt.herokuapp.com' }
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.perform_deliveries = true
 
-      config.action_mailer.default_url_options = { host: 'https://vayt.herokuapp.com/' }
-    config.action_mailer.delivery_method = :smtp
-    ActionMailer::Base.smtp_settings = {
-    :user_name => 'app91578525@heroku.com',
-    :password => 'uekwhijf1811',
-    :domain => 'heroku.com',
-    :address => 'smtp.sendgrid.net',
-    :port => 587,
-    :authentication => :plain,
-    :enable_starttls_auto => true
-    }
+
 end
