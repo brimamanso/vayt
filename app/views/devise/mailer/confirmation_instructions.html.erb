@@ -1,9 +1,9 @@
-<p>Welcome <%= @user.name %>!</p> 
+<p>Welcome <%= @email %>!</p> 
 
 <p>Your Vayt account has now been created. For security reasons, your account is currently locked.
 
 Please click on following link or copy and paste the link below into your internet browser to unlock your account.</p>
 
-<p> Enjoy: </p> <p> Vayt Team </p>
+<p> Regards: </p> <p> Vayt Team </p>
 
 <%= link_to 'Confirm my account', confirmation_url(@resource, :confirmation_token => @resource.confirmation_token) %>
