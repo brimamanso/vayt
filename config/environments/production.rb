@@ -77,19 +77,18 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
-
-  config.action_mailer.default_url_options = { host: 'https://vayt.herokuapp.com' }
-
-  ActionMailer::Base.delivery_method = :smtp
-  ActionMailer::Base.perform_deliveries = true
-
-  ActionMailer::Base.smtp_settings = {
-    :address              => 'smtp.sendgrid.net',
+  config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.default_url_options = { :host =>  'https://vayt.herokuapp.com' }
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    :address              => 'smtp.gmail.com',
     :port                 => '587',
-    :domain               => 'vayt.herokuapp.com',
-    :user_name            => 'app91578525@heroku.com',
-    :password             => 'uekwhijf1811',
+    :domain               => 'gmail.com',
+    :user_name            => 'brimabangura95@gmail.com',
+    :password             => 'inovatorwise',
     :authentication       => 'plain',
     :enable_starttls_auto => true
   }
+
+ 
 end
