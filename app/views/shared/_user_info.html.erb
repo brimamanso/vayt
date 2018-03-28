@@ -4,7 +4,7 @@
     <h5><%= link_to @user.name, @user %></h5>
   </div>
   <%= link_to followers_user_path(@user) do %>
-    <h5> <%= @user.followers_count %> Followers </h5>
+    <h5>  <%= pluralize(@user.followers_count, 'Follower') %> </h5> 
   <% end %>
   <%= link_to friends_user_path(@user) do %>
     <h5> <%= @user.follow_count %> Following </h5>

@@ -8,7 +8,8 @@ module UsersHelper
     end
 
     def options_for_boys
-      [['Single', 'Single'], ['Married', 'Married']]
+      [['Single', 'Single'], ['Married', 'Married'],  ['In a relationship', 'In a relationship'], 
+       ['Enganged', 'Enganged'], ['Its Complicated', 'Its Complicated']]
     end
 
     def options_for_girls

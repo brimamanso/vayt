@@ -9,7 +9,7 @@
                   </div>
                   
                   <div class="form-group">
-                        <%= truncate post.content, length: 200, html: { target: '_blank' } %>
+                        <%= truncate post.content, length: 210, html: { target: '_blank' } %>
                         <%= link_to "View all", post_path(post) %>
                           
                     <div class="form-group">
@@ -18,9 +18,9 @@
                       <div class="pull-right">
                         <% if belongs_to_user?(post) %>
                           <%= link_to edit_post_path(post) do %>
-                              <% fa_icon 'pencil' %>
+                              <% fa_icon 'pencil' %> 
                           <% end %>
-                          <span class="delete-post">
+                          |<span class="delete-post">
                             <%= link_to "Delete", post, method: :delete, data: { confirm: "Are You Sure you want to delete your post?"} %>
                           </span>
                             

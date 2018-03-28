@@ -25,6 +25,7 @@ Rails.application.routes.draw do
       get :followers
       get :mentionable
       get :deactivate
+      get :confirm_email
     end
   end
 

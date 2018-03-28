@@ -2,7 +2,7 @@
 @import url(https://fonts.googleapis.com/css?family=Montserrat);
 body {
     padding-top: 100px;
-    background: $bg-color;
+    background: #f0fff0;
     font-family: 'Noto Sans', sans-serif;
 }
 
@@ -195,4 +195,5 @@ p {
 
 .dropdown-menu>li>a {
     padding: 10px 30px;
+    color: purple;
 }

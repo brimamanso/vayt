@@ -1,11 +1,4 @@
-    <style>
-        body {
-            background: linear-gradient( 
-                rgba(0,0,0, 0.5),
-                rgba(0,0,0, 0.5)
-                ), url("/star.jpg") no-repeat center center fixed           
-        }
-    </style>
+
 <!--<div class="col-lg-8 col-lg-offset-0 well">
   <% if user_signed_in? %>
       <div class="col-sm-8" style="text-align: right; margin-top: 5px;"><a href="/users/edit"><li type="button" class="btn btn-default" style="color: grey; opacity: 0.8; font-weight: bold;">EDIT PROFILE</li></a></div>
@@ -19,7 +12,7 @@
   <div class="col-lg-8 col-lg-offset-2 well">
     <center><h3 style="color:purple;font-weight: bold;">
         
-       <%= @user.followers_count %> Followers</h3>
+       <%= pluralize(@user.followers_count, 'Follower') %> </h3>
     </center>   
     <hr>
     <div id="followers">
