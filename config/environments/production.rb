@@ -88,7 +88,7 @@ Rails.application.configure do
     :address => 'smtp.sendgrid.net',
     :domain => 'vayt.herokuapp.com',
     :port => 587,
-    :authentication => :plain,
+    :authentication => :login,
     :enable_starttls_auto => true
   }
 end
