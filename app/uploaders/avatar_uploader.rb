@@ -1,7 +1,7 @@
 class AvatarUploader < CarrierWave::Uploader::Base
 
     
-     storage :fog
+     storage :file
   
     
 end
