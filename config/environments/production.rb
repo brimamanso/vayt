@@ -71,22 +71,18 @@ Rails.application.configure do
   # Send deprecation notices to registered listeners.
   config.active_support.deprecation = :notify
 
-  config.active_record.dump_schema_after_migration = false
-
-  config.action_mailer.default_url_options = { :host =>  'https://vayt.herokuapp.com' }
-  config.action_mailer.delivery_method = :smtp
-  config.action_mailer. smtp_settings = 
-
-  ActionMailer::Base.perform_deliveries = true
-
+  # Use default logging formatter so that PID and timestamp are not suppressed.
+  config.log_formatter = ::Logger::Formatter.new
+  config.action_mailer.default_url_options = { host: 'https://vayt.herokuapp.com' }
+  # Do not dump schema after migrations.
   ActionMailer::Base.smtp_settings = {
-    :address              => 'smtp.sendgrid.net',
-    :port                 => '587',
-    :domain               => ' https://vayt.herokuapp.com/',
-    :user_name            => 'app91578525@heroku.com',
-    :password             => 'uekwhijf1811',
-    :authentication       => 'plain',
-    :enable_starttls_auto => true
+    :port           => ENV['MAILGUN_SMTP_PORT'],
+    :address        => ENV['MAILGUN_SMTP_SERVER'],
+    :user_name      => ENV['MAILGUN_SMTP_LOGIN'],
+    :password       => ENV['MAILGUN_SMTP_PASSWORD'],
+    :domain         => ENV['MAILGUN_DOMAIN'],
+    :authentication => :plain,
   }
+  ActionMailer::Base.delivery_method = :smtp
   
 end
