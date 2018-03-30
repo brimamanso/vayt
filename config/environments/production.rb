@@ -73,6 +73,7 @@ Rails.application.configure do
 
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
+  config.action_mailer.default_url_options = { :host =>  'https://vayt.herokuapp.com' }
 
   # Do not dump schema after migrations.
   ActionMailer::Base.smtp_settings = {
@@ -80,7 +81,7 @@ Rails.application.configure do
     :address        => ENV['MAILGUN_SMTP_SERVER'],
     :user_name      => ENV['MAILGUN_SMTP_LOGIN'],
     :password       => ENV['MAILGUN_SMTP_PASSWORD'],
-    :domain         => 'vayt.heroku.com',
+    :domain         => 'vayt.herokuapp.com',
     :authentication => :plain,
   }
   ActionMailer::Base.delivery_method = :smtp
