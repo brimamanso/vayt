@@ -40,6 +40,12 @@ h6 {
     height: 50px;
 }
 
+.avater {
+    width: 150px;
+    border-radius: 10rem;
+    height: 150px;
+}
+
 .cover {
     margin-top: -70px;
     height: 400px;
@@ -196,4 +202,5 @@ p {
 .dropdown-menu>li>a {
     padding: 10px 30px;
     color: purple;
+    background-color: white;
 }

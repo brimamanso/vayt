@@ -16,7 +16,7 @@
       
       <ul class="nav navbar-nav navbar-right">
         <% if user_signed_in? %>
-          <li> <%=  render 'notifications/notification_dropdown' %> </li>
+          <li> <%= render 'notifications/notification_dropdown' %> </li>
           <li><%= link_to('Find Friends', find_friends_path)%><li>
           <li><%= link_to " My Message", tlks_path, class: "item" %></li>
           <li><%= link_to(' My Profile', user_path(current_user)) %></li>
@@ -44,7 +44,7 @@
             <li>
                 <div id="search">
                   <%= form_tag search_path, method: :get do %>
-                      <%= text_field_tag :search, params[:search], placeholder: "Search vAyT", class: "btn btn-light " %>
+                      <%= text_field_tag :search, params[:search], placeholder: "Search for people", class: "btn btn-light " %>
                 </div>
                 <div id="box"> .
                     <%= submit_tag "Search", class: "btn btn-light" %>

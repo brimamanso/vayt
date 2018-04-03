@@ -80,7 +80,7 @@
 
 #search {
     float: left;
-    width: 280px;
+    width: 200px;
     height: 35px;
     padding: 8px 0px 0px 0px;
     font-weight: 600;
@@ -90,9 +90,10 @@
 
 #box {
     float: right;
+    height: 5px;
     padding: 5px 0px 0px 0px;
 }
 
 #search input [type="text"] {
-    width: 180px;
+    width: 50px;
 }

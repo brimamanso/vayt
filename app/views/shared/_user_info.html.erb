@@ -1,7 +1,14 @@
 <div id="user-info" class="well">
   <div class="text-center">
-    <%= render 'shared/avatar', user: @user %><br>
-    <h5><%= link_to @user.name, @user %></h5>
+      <% if @user.avatar.url %>
+        <%= image_tag @user.avatar_url,  style: "width: 50%;border-radius: 2rem;"if @user.avatar? %>
+      <% else %>
+        <div class="form-group" style="margin-top: -10px;">
+            <img src="/avatar.png" height="250px" width="250px" class="rounded-img">
+        </div> 
+      <% end %>
+    <br> 
+    <h4><%= link_to @user.name, @user %></h4>
   </div>
   <%= link_to followers_user_path(@user) do %>
     <h5>  <%= pluralize(@user.followers_count, 'Follower') %> </h5> 
@@ -13,6 +20,9 @@
     <%= fa_icon 'shield' %>
     <%= pluralize(@user.posts_count, 'post') %>
   </h5>
+  <% if @user.Website.present? %>
+      <h5><i class="fa fa-link"></i> <%= link_to @user.Website, @user.Website %></h5>
+  <% end %>
   <% if @user.bio.present? %>
     <h5>
       <p style="color: purple;font-weight: bold;">
@@ -67,9 +77,7 @@
       <%= @user.Likes %>
     </h5>
   <% end %>
-  <% if @user.Website.present? %>
-      <h5><i class="fa fa-link"></i> <%= link_to @user.Website, @user.Website %></h5>
-  <% end %>
+  
   <% if @user.Goals.present? %>
     <h5>
       <p style="color: purple;font-weight: bold;">
@@ -219,7 +227,7 @@
       <p style="color: purple;font-weight: bold;">
                      Best Friends:)
       </p>
-      <%= @user.Best_Friends %>
+      <%= @user.Best_Friends%> 
     </h5>
   <% end %>
   <% if @user.Favourite_Food.present? %>

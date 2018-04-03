@@ -9,7 +9,7 @@ class User < ActiveRecord::Base
 
   mount_uploader :avatar, AvatarUploader
   mount_uploader :cover, AvatarUploader
-  mount_uploader :avater, AvaterUploader
+  mount_uploader :avater, AvatarUploader
   
   has_many :posts, dependent: :destroy
   has_many :comments, dependent: :destroy
