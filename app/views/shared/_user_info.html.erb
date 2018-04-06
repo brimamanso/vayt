@@ -20,12 +20,6 @@
     <%= fa_icon 'shield' %>
     <%= pluralize(@user.posts_count, 'post') %>
   </h5>
-  <% if @user.date_of_birth.present? %>
-    <h5>
-      <%= fa_icon @user.sex %>
-      <%= "#{pluralize(age(@user.date_of_birth), 'year')} old" %>
-    </h5>
-  <% end %>
   <% if @user.Website.present? %>
       <h5><i class="fa fa-link"></i> <%= link_to @user.Website, @user.Website %></h5>
   <% end %>
