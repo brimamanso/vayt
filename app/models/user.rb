@@ -1,13 +1,15 @@
 class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
-  devise :database_authenticatable, :registerable, 
+  devise :database_authenticatable, :registerable,
     :recoverable, :rememberable, :trackable, :validatable, :confirmable, :lockable
+  acts_as_voter
   acts_as_follower
   acts_as_followable
 
   mount_uploader :avatar, AvatarUploader
   mount_uploader :cover, AvatarUploader
+  mount_uploader :avater, AvatarUploader
   
   has_many :posts, dependent: :destroy
   has_many :comments, dependent: :destroy
