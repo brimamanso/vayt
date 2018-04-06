@@ -8,7 +8,7 @@
             
         }
         h3 {
-            color: purple;
+            color: #660066;
             font-weight: bold;
         }
 
@@ -26,6 +26,8 @@
           color: white;
             
         }
+        
+
       
      
     </style>
@@ -34,28 +36,32 @@
             <div class="col-lg-3">
                 <%= render "devise/sessions/form" %> <br>   
                 <p style="color:white;font-weight: bold;">
-                  New to Vayt? Register Below:
+                  New to vAyTe? Register Below:
                 </p>
-                  <%= render "devise/registrations/form" %>
-            
+                  <%= render "devise/registrations/form" %>   
   </div>
   <br>
 <div class="row">
     <div class="col-lg-5 col-lg-offset-2 well">
             <center>
-                <h5> Connect and Share your creative ideas, </h5> <h5>  passions and interests to the world. <h5>
+                <h5> Connect and share your creative ideas, </h5> <h5>  passions and interests with the world. <h5>
                 <h5> Motivate others or be Motivated. </h5>
-                <h5 style="color:purple;font-weight: bold;">Founder & CEO: Brima Manso Bangura </h5>
+                <h5 style="color:#660066;font-weight: bold;">Founder & CEO: Brima Manso Bangura </h5>
                 <b>a Brima Manso Bangura production</b> <br>
-                <h5 style="color:purple;font-weight: bold;">vAyT (c) 2018 </h5>
+                <h5 style="color:#660066;font-weight: bold;">vAyTe (c) 2018 </h5>
                 <h5><%= link_to 'Privacy', privacy_path %> |
-                <%= link_to 'Terms & Conditions', terms_path %> |
-                <%= link_to 'About', about_path %> </h5>
+                <%= link_to 'Terms', terms_path %> |
+                <%= link_to 'About', about_path %> |
+                <%= link_to 'Useful Links', useful_links_path %></h5>
             </center>
+               
 
             
     </div>
+    
 </div>
+
+                    
 
 
 

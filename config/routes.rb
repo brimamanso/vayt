@@ -45,6 +45,7 @@ Rails.application.routes.draw do
   match :search, to: 'home#search', as: :search, via: :get
   match :privacy, to: 'home#privacy', as: :privacy, via: :get
   match :Terms, to: 'home#terms', as: :terms, via: :get
+  match :useful_links, to: 'home#useful_links', as: :useful_links, via: :get
 
   resources :tlks do
     resources :mls

@@ -6,7 +6,7 @@
   <div class="col-lg-6">
     <div class="well">
       <% unless is_current_user?(@user) %>
-        <center><p style="color:purple;font-weight: bold;">
+        <center><p style="color:#660066;font-weight: bold;">
           <%= 'This Person Is Following You' if current_user.followed_by?(@user) %>
           <%= render 'follows/form', user: @user %>
         </center>
@@ -30,9 +30,9 @@
     <div class="panel panel-default pic-panel">
       <div class="panel-body row">
           <center>
-              <h5 style="color:purple;font-weight: bold;">Founder & CEO: Brima Manso Bangura </h5>
+              <h5 style="color:#660066;font-weight: bold;">Founder & CEO: Brima Manso Bangura </h5>
               <b>a Brima Manso Bangura production</b> <br>
-              <h5 style="color:purple;font-weight: bold;">vAyT (c) 2018 </h5>
+              <h5 style="color:#660066;font-weight: bold;">vAyTe (c) 2018 </h5>
           </center>
       </div>
     </div>

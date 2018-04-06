@@ -85,7 +85,7 @@
     padding: 8px 0px 0px 0px;
     font-weight: 600;
     font-style: Garamound;
-    color: purple !important;
+    color: #660066 !important;
 }
 
 #box {
@@ -95,5 +95,13 @@
 }
 
 #search input [type="text"] {
+    width: 50px;
+}
+
+#navbar-header {
+    background: white;
+}
+
+.avatar-xs {
     width: 50px;
 }

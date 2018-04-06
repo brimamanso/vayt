@@ -8,7 +8,7 @@
             
         }
         h3 {
-            color: purple;
+            color: #660066;
             font-weight: bold;
         }
 
@@ -61,18 +61,17 @@
       <% if devise_mapping.rememberable? -%>
         <div class="form-group">
           <h5 style="color:white;">
-            <%= f.check_box :remember_me %> By ticking this box, you are agreeing with our <%= link_to 'Privacy Policy', privacy_path, style: "color: white;" %> and <%= link_to 'Terms&Condition', terms_path, style: "color: white" %> in this site. 
-          </h5>
+              <%= f.check_box :remember_me %> By ticking this box, you have read our 
+              <%= link_to 'Privacy Policy', privacy_path, style: "color: white" %>
+               and agreed with our <%= link_to 'Terms & Condition', terms_path, style: "color: white" %> .</h5>
         </div>
       <% end -%>
       <div class="actions">
-        <center>
           <%= f.submit 'Create Free Account', class: 'btn btn-primary' %>
-        </center>
       </div>
     <% end %>
     <br>
-    <center>
+    <div class="form-group">
       <%= render 'devise/shared/links' %>
-    </center>
+    </div>
   </div>

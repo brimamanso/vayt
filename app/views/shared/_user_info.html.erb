@@ -20,12 +20,18 @@
     <%= fa_icon 'shield' %>
     <%= pluralize(@user.posts_count, 'post') %>
   </h5>
+  <% if @user.date_of_birth.present? %>
+    <h5>
+      <%= fa_icon @user.sex %>
+      <%= "#{pluralize(age(@user.date_of_birth), 'year')} old" %>
+    </h5>
+  <% end %>
   <% if @user.Website.present? %>
       <h5><i class="fa fa-link"></i> <%= link_to @user.Website, @user.Website %></h5>
   <% end %>
   <% if @user.bio.present? %>
     <h5>
-      <p style="color: purple;font-weight: bold;">
+      <p style="color: #660066;font-weight: bold;">
                      Bio:)
       </p>
       <%= @user.bio %>
@@ -33,7 +39,7 @@
   <% end %>
   <% if @user.Hobies.present? %>
     <h5>
-      <p style="color: purple;font-weight: bold;">
+      <p style="color: #660066;font-weight: bold;">
                      Hobies:)
       </p>
       <%= @user.Hobies %>
@@ -41,7 +47,7 @@
   <% end %>
   <% if @user.Relationship_status.present? %>
     <h5>
-      <p style="color: purple;font-weight: bold;">
+      <p style="color: #660066;font-weight: bold;">
                      Relationship status:)
       </p>
       <%= @user.Relationship_status %>
@@ -55,7 +61,7 @@
   <% end %>
   <% if @user.school_type.present? %>
     <h5>
-      <p style="color: purple;font-weight: bold;">
+      <p style="color: #660066;font-weight: bold;">
                      School Type:)
       </p>
       <%= @user.school_type %>
@@ -63,7 +69,7 @@
   <% end %>
   <% if @user.Interests.present? %>
     <h5>
-      <p style="color: purple;font-weight: bold;">
+      <p style="color: #660066;font-weight: bold;">
                      Interests:)
       </p>
       <%= @user.Interests %>
@@ -71,7 +77,7 @@
   <% end %>
   <% if @user.Likes.present? %>
     <h5>
-      <p style="color: purple;font-weight: bold;">
+      <p style="color: #660066;font-weight: bold;">
                      Likes:)
       </p>
       <%= @user.Likes %>
@@ -80,7 +86,7 @@
   
   <% if @user.Goals.present? %>
     <h5>
-      <p style="color: purple;font-weight: bold;">
+      <p style="color: #660066;font-weight: bold;">
                      Goals:)
       </p>
       <%= @user.Goals %>
@@ -88,7 +94,7 @@
   <% end %>
   <% if @user.Skills.present? %>
     <h5>
-      <p style="color: purple;font-weight: bold;">
+      <p style="color: #660066;font-weight: bold;">
                      Skills:)
       </p>
       <%= @user.Skills %>
@@ -96,7 +102,7 @@
   <% end %>
   <% if @user.Nationality.present? %>
     <h5>
-      <p style="color: purple;font-weight: bold;">
+      <p style="color: #660066;font-weight: bold;">
                      Nationality:)
       </p>
       <%= @user.Nationality %>
@@ -104,7 +110,7 @@
   <% end %>
   <% if @user.Majors.present? %>
     <h5>
-      <p style="color: purple;font-weight: bold;">
+      <p style="color: #660066;font-weight: bold;">
                      Majors:)
       </p>
       <%= @user.Majors %>
@@ -112,7 +118,7 @@
   <% end %>
   <% if @user.Minors.present? %>
     <h5>
-      <p style="color: purple;font-weight: bold;">
+      <p style="color: #660066;font-weight: bold;">
                      Minors:)
       </p>
       <%= @user.Minors %>
@@ -120,7 +126,7 @@
   <% end %>
   <% if @user.Accomplishments.present? %>
     <h5>
-      <p style="color: purple;font-weight: bold;">
+      <p style="color: #660066;font-weight: bold;">
                      Accomplishments:)
       </p>
       <%= @user.Accomplishments %>
@@ -128,7 +134,7 @@
   <% end %>
   <% if @user.Allergies.present? %>
     <h5>
-      <p style="color: purple;font-weight: bold;">
+      <p style="color: #660066;font-weight: bold;">
                      Allergies:)
       </p>
       <%= @user.Allergies %>
@@ -136,7 +142,7 @@
   <% end %>
   <% if @user.Profession.present? %>
     <h5>
-      <p style="color: purple;font-weight: bold;">
+      <p style="color: #660066;font-weight: bold;">
                      Profession:)
       </p>
       <%= @user.Profession %>
@@ -144,7 +150,7 @@
   <% end %>
   <% if @user.Experiences.present? %>
     <h5>
-      <p style="color: purple;font-weight: bold;">
+      <p style="color: #660066;font-weight: bold;">
                      Experiences:)
       </p>
       <%= @user.Experiences %>
@@ -152,7 +158,7 @@
   <% end %>
   <% if @user.Role_Model.present? %>
     <h5>
-      <p style="color: purple;font-weight: bold;">
+      <p style="color: #660066;font-weight: bold;">
                      Role Model:)
       </p>
       <%= @user.Role_Model %>
@@ -160,7 +166,7 @@
   <% end %>
   <% if @user.Favourite_Musicians.present? %>
     <h5>
-      <p style="color: purple;font-weight: bold;">
+      <p style="color: #660066;font-weight: bold;">
                      Favourite Musicians:)
       </p>
       <%= @user.Favourite_Musicians %>
@@ -168,7 +174,7 @@
   <% end %>
   <% if @user.Favourite_Sports.present? %>
     <h5>
-      <p style="color: purple;font-weight: bold;">
+      <p style="color: #660066;font-weight: bold;">
                      Favourite Sports:)
       </p>
       <%= @user.Favourite_Sports %>
@@ -176,7 +182,7 @@
   <% end %>
   <% if @user.Favourite_TVshows.present? %>
     <h5>
-      <p style="color: purple;font-weight: bold;">
+      <p style="color: #660066;font-weight: bold;">
                      Favourite TVshows:)
       </p>
       <%= @user.Favourite_TVshows %>
@@ -184,7 +190,7 @@
   <% end %>
   <% if @user.Favourite_Footballers.present? %>
     <h5>
-      <p style="color: purple;font-weight: bold;">
+      <p style="color: #660066;font-weight: bold;">
                      Favourite Footballers:)
       </p>
       <%= @user.Favourite_Footballers %>
@@ -192,7 +198,7 @@
   <% end %>
   <% if @user.Favourite_Subjects.present? %>
     <h5>
-      <p style="color: purple;font-weight: bold;">
+      <p style="color: #660066;font-weight: bold;">
                      Favourite Subjects:)
       </p>
       <%= @user.Favourite_Subjects %>
@@ -200,7 +206,7 @@
   <% end %>
   <% if @user.Favourite_Teachers.present? %>
     <h5>
-      <p style="color: purple;font-weight: bold;">
+      <p style="color: #660066;font-weight: bold;">
                      Favourite Teachers:)
       </p>
       <%= @user.Favourite_Teachers %>
@@ -208,7 +214,7 @@
   <% end %>
   <% if @user.Favourite_Professors.present? %>
     <h5>
-      <p style="color: purple;font-weight: bold;">
+      <p style="color: #660066;font-weight: bold;">
                     Favourite Professors:)
       </p>
       <%= @user.Favourite_Professors %>
@@ -216,7 +222,7 @@
   <% end %>
   <% if @user.Favourite_Roommate.present? %>
     <h5>
-      <p style="color: purple;font-weight: bold;">
+      <p style="color: #660066;font-weight: bold;">
                     Favourite Roommate:)
       </p>
       <%= @user.Favourite_Roommate %>
@@ -224,7 +230,7 @@
   <% end %>
   <% if @user.Best_Friends.present? %>
     <h5>
-      <p style="color: purple;font-weight: bold;">
+      <p style="color: #660066;font-weight: bold;">
                      Best Friends:)
       </p>
       <%= @user.Best_Friends%> 
@@ -232,7 +238,7 @@
   <% end %>
   <% if @user.Favourite_Food.present? %>
     <h5>
-      <p style="color: purple;font-weight: bold;">
+      <p style="color: #660066;font-weight: bold;">
                      Favourite Food:)
       </p>
       <%= @user.Favourite_Food %>
@@ -240,7 +246,7 @@
   <% end %>
   <% if @user.Favourite_Basketball_Players.present? %>
     <h5>
-      <p style="color: purple;font-weight: bold;">
+      <p style="color: #660066;font-weight: bold;">
                      Favourite Basketball Players:)
       </p>
       <%= @user.Favourite_Basketball_Players %>
@@ -248,7 +254,7 @@
   <% end %>
   <% if @user.Favourite_Countries.present? %>
     <h5>
-      <p style="color: purple;font-weight: bold;">
+      <p style="color: #660066;font-weight: bold;">
                      Favourite Countries:)
       </p>
       <%= @user.Favourite_Countries %>
@@ -256,7 +262,7 @@
   <% end %>
   <% if @user.Favourite_Car.present? %>
     <h5>
-      <p style="color: purple;font-weight: bold;">
+      <p style="color: #660066;font-weight: bold;">
                      Favourite Car:)
       </p>
       <%= @user.Favourite_Car %>
@@ -264,7 +270,7 @@
   <% end %>
   <% if @user.Favourite_Songs.present? %>
     <h5>
-      <p style="color: purple;font-weight: bold;">
+      <p style="color: #660066;font-weight: bold;">
                      Favourite Songs:)
       </p>
       <%= @user.Favourite_Songs %>
@@ -272,7 +278,7 @@
   <% end %>
   <% if @user.Favourite_Youtubers.present? %>
     <h5>
-      <p style="color: purple;font-weight: bold;">
+      <p style="color: #660066;font-weight: bold;">
                      Favourite Youtubers:)
       </p>
       <%= @user.Favourite_Youtubers %>
@@ -280,7 +286,7 @@
   <% end %>
   <% if @user.Favourite_Schools.present? %>
     <h5>
-      <p style="color: purple;font-weight: bold;">
+      <p style="color: #660066;font-weight: bold;">
                      Favourite Schools:)
       </p>
       <%= @user.Favourite_Schools %>
@@ -288,7 +294,7 @@
   <% end %>
   <% if @user.Favourite_University.present? %>
     <h5>
-      <p style="color: purple;font-weight: bold;">
+      <p style="color: #660066;font-weight: bold;">
                      Favourite University:)
       </p>
       <%= @user.Favourite_University %>
@@ -296,7 +302,7 @@
   <% end %>
   <% if @user.Favourite_Animals.present? %>
     <h5>
-      <p style="color: purple;font-weight: bold;">
+      <p style="color: #660066;font-weight: bold;">
                      Favourite Animals:)
       </p>
       <%= @user.Favourite_Animals %>
@@ -304,7 +310,7 @@
   <% end %>
   <% if @user.Favourite_Seasons.present? %>
     <h5>
-      <p style="color: purple;font-weight: bold;">
+      <p style="color: #660066;font-weight: bold;">
                      Favourite Seasons:)
       </p>
       <%= @user.Favourite_Seasons %>
@@ -312,7 +318,7 @@
   <% end %>
   <% if @user.Favourite_Pet.present? %>
     <h5>
-      <p style="color: purple;font-weight: bold;">
+      <p style="color: #660066;font-weight: bold;">
                      Favourite Pet:)
       </p>
       <%= @user.Favourite_Pet %>
@@ -320,7 +326,7 @@
   <% end %>
   <% if @user.Favourite_Brand.present? %>
     <h5>
-      <p style="color: purple;font-weight: bold;">
+      <p style="color: #660066;font-weight: bold;">
                      Favourite Brand:)
       </p>
       <%= @user.Favourite_Brand %>
@@ -328,7 +334,7 @@
   <% end %>
   <% if @user.Favourite_Footwears.present? %>
     <h5>
-      <p style="color: purple;font-weight: bold;">
+      <p style="color: #660066;font-weight: bold;">
                      Favourite Footwears:)
       </p>
       <%= @user.Favourite_Footwears %>
@@ -336,7 +342,7 @@
   <% end %>
   <% if @user.Favourite_Movies.present? %>
     <h5>
-      <p style="color: purple;font-weight: bold;">
+      <p style="color: #660066;font-weight: bold;">
                      Favourite Movies:)
       </p>
       <%= @user.Favourite_Movies %>
@@ -344,7 +350,7 @@
   <% end %>
   <% if @user.Favourite_Books.present? %>
     <h5>
-      <p style="color: purple;font-weight: bold;">
+      <p style="color: #660066;font-weight: bold;">
                      Favourite Books:)
       </p>
       <%= @user.Favourite_Books %>
@@ -352,7 +358,7 @@
   <% end %>
   <% if @user.Favourite_Destinations.present? %>
     <h5>
-      <p style="color: purple;font-weight: bold;">
+      <p style="color: #660066;font-weight: bold;">
                      Favourite Destinations:)
       </p>
       <%= @user.Favourite_Destinations %>
@@ -360,7 +366,7 @@
   <% end %>
   <% if @user.Favourite_Time_of_sleep.present? %>
     <h5>
-      <p style="color: purple;font-weight: bold;">
+      <p style="color: #660066;font-weight: bold;">
                      Favourite Time of sleep:)
       </p>
       <%= @user.Favourite_Time_of_sleep %>
@@ -368,7 +374,7 @@
   <% end %>
   <% if @user.Favourite_Quote.present? %>
     <h5>
-      <p style="color: purple;font-weight: bold;">
+      <p style="color: #660066;font-weight: bold;">
                      Favourite Quote:)
       </p>
       <%= @user.Favourite_Quote %>
@@ -376,7 +382,7 @@
   <% end %>
   <% if @user.Business_Ventures.present? %>
     <h5>
-      <p style="color: purple;font-weight: bold;">
+      <p style="color: #660066;font-weight: bold;">
                      Business Ventures:)
       </p>
       <%= @user.Business_Ventures %>
@@ -384,7 +390,7 @@
   <% end %>
   <% if @user.strengths.present? %>
     <h5>
-      <p style="color: purple;font-weight: bold;">
+      <p style="color: #660066;font-weight: bold;">
                      Strengths:)
       </p>
       <%= @user.strengths %>
@@ -392,7 +398,7 @@
   <% end %>
   <% if @user.Core_Values.present? %>
     <h5>
-      <p style="color: purple;font-weight: bold;">
+      <p style="color: #660066;font-weight: bold;">
                     Core Values:)
       </p>
       <%= @user.Core_Values %>
@@ -400,7 +406,7 @@
   <% end %>
   <% if @user.why_are_you_on_earth.present? %>
     <h5>
-      <p style="color: purple;font-weight: bold;">
+      <p style="color: #660066;font-weight: bold;">
                      Why Are You On Earth:)
       </p>
       <%= @user.why_are_you_on_earth %>
@@ -408,7 +414,7 @@
   <% end %>
   <% if @user.passions.present? %>
     <h5>
-      <p style="color: purple;font-weight: bold;">
+      <p style="color: #660066;font-weight: bold;">
                      Passions:)
       </p>
       <%= @user.passions %>
@@ -416,7 +422,7 @@
   <% end %>
   <% if @user.Friends_with_benefits.present? %>
     <h5>
-      <p style="color: purple;font-weight: bold;">
+      <p style="color: #660066;font-weight: bold;">
                      Friends with benefits:)
       </p>
       <%= @user.Friends_with_benefits %>
@@ -424,7 +430,7 @@
   <% end %>
   <% if @user.believes.present? %>
     <h5>
-      <p style="color: purple;font-weight: bold;">
+      <p style="color: #660066;font-weight: bold;">
                     Believes:)
       </p>
       <%= @user.believes %>
@@ -432,7 +438,7 @@
   <% end %>
   <% if @user.wish.present? %>
     <h5>
-      <p style="color: purple;font-weight: bold;">
+      <p style="color: #660066;font-weight: bold;">
                      Wish:)
       </p>
       <%= @user.wish %>
@@ -440,7 +446,7 @@
   <% end %>
   <% if @user.Leadership_Styles.present? %>
     <h5>
-      <p style="color: purple;font-weight: bold;">
+      <p style="color: #660066;font-weight: bold;">
                      Leadership Styles:)
       </p>
       <%= @user.Leadership_Styles %>
@@ -448,7 +454,7 @@
   <% end %>
   <% if @user.Native_Language.present? %>
     <h5>
-      <p style="color: purple;font-weight: bold;">
+      <p style="color: #660066;font-weight: bold;">
                      Native Language:)
       </p>
       <%= @user.Native_Language %>

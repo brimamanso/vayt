@@ -4,6 +4,4 @@ class Faq < ApplicationRecord
     def reply_count
         replies.length
     end
-    
-   
 end
