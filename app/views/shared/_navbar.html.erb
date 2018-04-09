@@ -18,7 +18,7 @@
         <% if user_signed_in? %>
           <li> <%= render 'notifications/notification_dropdown' %> </li>
           <li><%= link_to('Find Friends', find_friends_path)%><li>
-          <li><%= link_to " My Message", tlks_path, class: "item" %></li>
+          <li><%= link_to " My Messages", tlks_path, class: "item" %></li>
           <li><%= link_to(' My Profile', user_path(current_user)) %></li>
           
 
@@ -45,12 +45,13 @@
             <li>
                 <div id="search">
                   <%= form_tag search_path, method: :get do %>
-                      <%= text_field_tag :search, params[:search], placeholder: "Search for people", class: "btn btn-light " %>
+                      <%= text_field_tag :search, params[:search], placeholder: "Search for anyone", class: "btn btn-light " %>
                 </div>
-                <div id="box"> .
-                    <%= submit_tag "Search", class: "btn btn-light" %>
-                </div>
-                    <br> <br>
+                        <%= file_field_tag "post[media]", class: "hidden", id: "media-upload-btn" %>
+                          <%= button_tag id: "box", class: "btn btn-default" do %>
+                          <%= fa_icon "search" %>
+                        <% end%>
+                          
                   <% end %>
                
             </li>

@@ -1,7 +1,7 @@
 <div id="user-info" class="well">
   <div class="text-center">
       <% if @user.avatar.url %>
-        <%= image_tag @user.avatar_url,  style: "width: 50%;border-radius: 2rem;"if @user.avatar? %>
+        <%= link_to image_tag @user.avatar_url,  style: "width: 50%;border-radius: 2rem;"if @user.avatar? %>
       <% else %>
         <div class="form-group" style="margin-top: -10px;">
             <img src="/avatar.png" height="250px" width="250px" class="rounded-img">
@@ -20,6 +20,12 @@
     <%= fa_icon 'shield' %>
     <%= pluralize(@user.posts_count, 'post') %>
   </h5>
+  <% if @user.cob.present? %>
+    <h5>
+      <%= fa_icon @user.sex %>
+      <%= "#{pluralize(age(@user.cob), 'year')} old" %>
+    </h5>
+  <% end %>
   <% if @user.Website.present? %>
       <h5><i class="fa fa-link"></i> <%= link_to @user.Website, @user.Website %></h5>
   <% end %>

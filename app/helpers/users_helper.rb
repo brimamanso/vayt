@@ -16,11 +16,11 @@ module UsersHelper
       [['University', 'University'], ['College', 'College'], ['High School', 'High School'], ['Other', 'Other']]
     end
     
-    def age(date_of_birth)
+    def age(cob)
       now = Time.now.utc.to_date
-      now.year - date_of_birth.year - (date_of_birth.to_date.change(:year => now.year) > now ? 1 : 0)
+      now.year - cob.year - (cob.to_date.change(:year => now.year) > now ? 1 : 0)
     end
-  
+
     def is_current_user?(user)
       user == current_user
     end

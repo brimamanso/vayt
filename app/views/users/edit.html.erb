@@ -78,7 +78,7 @@
         </div>
         <div class="form-group">
           <h5><%= f.label :Website %></h5>
-          <%= f.text_field :Website, placeholder: ' Add https:// of http:// to ur Website', class: 'form-control' %>
+          <%= f.text_field :Website, placeholder: ' Example https://www.vayte.com', class: 'form-control' %>
         </div>
         <div class="form-group">
           <h5><%= f.label :Goals %></h5>
@@ -118,6 +118,11 @@
           <%= f.select :sex, options_for_seasons, class: 'form-control', prompt: 'Select One' %>
         </div>
         <div class="form-group">
+           <h5 style="color: #660066;font-weight: bold;">
+                  Date of Birth    </h6>
+          <%= f.text_field :cob, placeholder: 'Day/Month/Year', class: 'form-control' %>
+        </div>
+        <div class="form-group">
           <h5><%= f.label :Role_Model %></h5>
           <%= f.text_area :Role_Model, placeholder: 'Role Model', class: 'form-control' %>
         </div>
@@ -139,10 +144,6 @@
           <%= f.text_area :Favourite_Subjects, placeholder: 'Favourite Subjects', class: 'form-control' %>
         </div>
         <div class="form-group">
-          <h5><%= f.label :Best_Friends %></h5>
-          <%= f.text_area :Best_Friends, placeholder: 'Best Friends', class: 'form-control' %>
-        </div>
-        <div class="form-group">
           <h5><%= f.label :Favourite_Food %></h5>
           <%= f.text_area :Favourite_Food, placeholder: 'Favourite Food', class: 'form-control' %>
         </div>
@@ -157,14 +158,6 @@
         <div class="form-group">
           <h5><%= f.label :Favourite_Youtubers %></h5>
           <%= f.text_area :Favourite_Youtubers, placeholder: 'Favourite Youtubers', class: 'form-control' %>
-        </div>
-        <div class="form-group">
-          <h5><%= f.label :Favourite_Schools %></h5>
-          <%= f.text_area :Favourite_Schools, placeholder: 'Favourite Schools', class: 'form-control' %>
-        </div>
-        <div class="form-group">
-          <h5><%= f.label :Favourite_University %></h5>
-          <%= f.text_area :Favourite_University, placeholder: 'Favourite University', class: 'form-control' %>
         </div>
         <div class="form-group">
           <h5><%= f.label :Favourite_Animals %></h5>
@@ -218,10 +211,6 @@
         <div class="form-group">
           <h5><%= f.label :Favourite_Quote %></h5>
           <%= f.text_area :Favourite_Quote, placeholder: 'Favourite Quote', class: 'form-control' %>
-        </div>
-        <div class="form-group">
-          <h5><%= f.label :why_are_you_on_earth %></h5>
-          <%= f.text_area :why_are_you_on_earth, placeholder: 'Why are you on earth', class: 'form-control' %>
         </div>
         <div class="form-group">
           <h5><%= f.label :Core_Values %></h5>
