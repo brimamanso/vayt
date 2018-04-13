@@ -1,7 +1,7 @@
 <div id="user-info" class="well">
   <div class="text-center">
       <% if @user.avatar.url %>
-        <%= link_to image_tag @user.avatar_url,  style: "width: 50%;border-radius: 2rem;"if @user.avatar? %>
+        <%= link_to image_tag @user.avatar_url,  style: "width: 60%;border-radius: 2rem;"if @user.avatar? %>
       <% else %>
         <div class="form-group" style="margin-top: -10px;">
             <img src="/avatar.png" height="250px" width="250px" class="rounded-img">
